@@ -1,0 +1,138 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #ffc600;
+  background: url(background.jpg);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin:0;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+h1 {
+  text-align: center;
+  font-size: 7rem;
+  line-height:1;
+  margin-bottom: 0;
+}
+
+.score {
+  background:rgba(255,255,255,0.2);
+  padding:0 3rem;
+  line-height:1;
+  border-radius:1rem;
+}
+
+.game {
+  width:600px;
+  height:400px;
+  display:flex;
+  flex-wrap:wrap;
+  margin:0 auto;
+}
+
+.pipe {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.pipe:after {
+  display: block;
+  background: url(pipe2.png) bottom center no-repeat;
+  background-size:contain;
+  content:'';
+  width: 100%;
+  height:170px;
+  position: absolute;
+  z-index: 2;
+  bottom:-100px;
+}
+
+.mario {
+  background:url('mario.png') bottom center no-repeat;
+  background-size:60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 65%;
+  transition:all 0.4s;
+}
+
+.pipe.up .mario {
+  top:0;
+}
+
+/*BUTTON STYLES THANKS TO @HEARTBOX*/
+
+#startButton {
+  margin: 3em auto;
+  display: block;
+  color: white;
+  font-size: 1.5em;
+}
+
+.Button {
+  margin-bottom: 50px;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+.Button.Button--start {
+  width: 120px;
+  height: 45px;
+}
+.Button.Button--start button {
+  border-radius: 4px;
+}
+
+button {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  box-shadow: 0px 0px 0px #750014;
+  background: -webkit-radial-gradient(center ellipse, #d60d2e 0%, #c20020 100%);
+  background: radial-gradient(ellipse at center, #d60d2e 0%, #c20020 100%);
+  -webkit-transition: box-shadow 0.15s, -webkit-transform 0.15s;
+  transition: box-shadow 0.15s, -webkit-transform 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s, -webkit-transform 0.15s;
+  -webkit-transform: rotateX(0deg) translateY(0);
+          transform: rotateX(0deg) translateY(0);
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+button:hover {
+  box-shadow: 0px 5px 0px #750014;
+  border-radius: 8px;
+  -webkit-transform: rotateX(30deg) translateY(0);
+          transform: rotateX(30deg) translateY(0);
+}
+button:hover:active {
+  text-shadow: 0 0 4px #ad001d;
+  box-shadow: 0 1px 0 #423847;
+  background: -webkit-radial-gradient(center ellipse, #ff002b 0%, #ed0028 100%);
+  background: radial-gradient(ellipse at center, #ff002b 0%, #ed0028 100%);
+  -webkit-transition: box-shadow 0.05s, -webkit-transform 0.05s;
+  transition: box-shadow 0.05s, -webkit-transform 0.05s;
+  transition: transform 0.05s, box-shadow 0.05s;
+  transition: transform 0.05s, box-shadow 0.05s, -webkit-transform 0.05s;
+  -webkit-transform: rotateX(30deg) translateY(4px);
+          transform: rotateX(30deg) translateY(4px);
+}
+button span {
+  position: relative;
+  font-size: 21px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
